@@ -123,7 +123,13 @@ public class CountDowner extends JFrame {
 		int countLabelWidth = Math.max(countLabelMinWidth, basePanel.getSize().width - barLength);
 		countLabel.setBounds(0, 0, countLabelWidth, basePanel.getSize().height);
 		timeProgressBar.setBounds(countLabelWidth, 0, barLength, basePanel.getSize().height);
-		countLabel.setText(pauseTxtInBar + Integer.toString((int) (timeRemaining / 1000 / 60)) + "  ");
+		if (timeRemaining < 1000 * 60) {
+			countLabel.setForeground(Color.RED);
+			countLabel.setText(pauseTxtInBar + Integer.toString((int) (timeRemaining / 1000)) + "  sec");
+		} else {
+			countLabel.setForeground(Color.BLACK);
+			countLabel.setText(pauseTxtInBar + Integer.toString((int) (timeRemaining / 1000 / 60)) + "  ");
+		}
 
 		if (timeRemaining > 0) {
 			if (countLabel.getBackground() != countLabelRunningColor)
