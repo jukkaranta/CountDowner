@@ -1,7 +1,7 @@
 # CountDowner
 A simple count down progress bar. Set the time, watch the progress bar progress and then flash when time is up.
 
-Time is measured in minutes. The bar shows the remaining time.
+Time is measured in minutes. The bar shows the remaining time. The last minute count down is show in seconds in red font and "sec".
 
 Click to set the time to where you clicked - relative to time scale.
 
